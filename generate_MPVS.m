@@ -34,12 +34,12 @@ if (DATASET==1) % Handling Lytro Dataset
     end
     
 elseif(DATASET == 2) %Handling Tarot Light Field from Stanford Dataset given in 8 Bpp .png format
-    W=640;
-    H=480;
+    W=1024;
+    H=1024;
     inputBPP=8;
     outputBPP=8;
-    path_input=sprintf('%s\\Stanford\\truck\\',P.PathDataset);
-    path_output=sprintf('%s\\Stanford\\truck',P.pathMPVS_Sequences);
+    path_input=sprintf('%s\\Stanford\\tarot\\',P.PathDataset);
+    path_output=sprintf('%s\\Stanford\\tarot',P.pathMPVS_Sequences);
     
     if exist(path_input, 'dir')% check if input LF exists
         mkdir(path_output)
