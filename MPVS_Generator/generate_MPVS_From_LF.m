@@ -45,14 +45,15 @@ for indx=1:SAMP:Layers
         fileId = fopen(fileName, 'w');
     end
     
-    for indy=1:SAMP:Frames+0 % +1 indicates dummy frame entry       
+    for indy=1:SAMP:Frames+1 % +1 indicates dummy frame entry       
         
         
         if(DATASET==2)
             filename=listing(POC(indy)+2+((VeiwID(indx)-1)*17)).name
             NameWithPath=sprintf('%s%s',path_input_db,filename);
-            I_imgT_F=imread(NameWithPath);
-            I_imgT=imresize(I_imgT_F,0.5);
+            I_imgT=imread(NameWithPath);         
+              
+            
             NameMatrix{indx,indy}=filename;
         else
             filename=sprintf('%s%03d_%03d.ppm',path_input_db,POC(indy),VeiwID(indx))
